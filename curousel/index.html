@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        width: 300px;
+        height: 400px;
+    }
+</style>
+<body>
+    <div id="main">
+       <img style="max-width: 100%;" src="" alt="">
+    </div>
+    <button onclick="adds()">change</button>
+    <button onclick="rev()">reverse</button>
+</body>
+<script type="text/javascript">
+
+    let arr = ['free-photo-of-man-in-hat-and-with-backpack-standing-with-hills-behind.jpeg', 'pexels-photo-3935702.jpeg', 'pexels-photo-8241135.webp', 'pexels-photo-12205909.jpeg', 'pexels-photo-16777741.webp']
+
+    let mains = document.getElementById('main')
+    let i = 0
+    mains.innerHTML = `<img style="max-width: 100%;" src="../../media/img/${arr[i]}" alt="">`
+    i = 1
+    function adds(params) {
+        if (i < arr.length) {
+            console.log('+',i)
+            mains.innerHTML = `<img style="max-width: 100%;" 70%;" src="../../media/img/${arr[i]}" alt="">`
+        i++
+
+
+        }
+        else {
+            console.log('+ with else',i)
+            i = 0
+            mains.innerHTML = `<img style="max-width: 100%;" src="../../media/img/${arr[i]}" alt="">`
+        }
+
+    }
+
+
+    function rev(){
+        if(i>0){
+            i--
+            mains.innerHTML = `<img style="max-width: 100%;" src="../../media/img/${arr[i]}" alt="">`
+            console.log(i)
+        }
+        else{
+            i = arr.length-1
+            console.log('else',i)
+        }
+    }
+
+
+
+
+
+
+
+
+    // let arr = ['1','2','3','4','5','6']
+    // let i = 0
+    // function adds(){
+    //     if(i<arr.length){
+    //         // console.log(i)
+    //         console.log(arr[i])
+    //         console.log('i',i)
+    //     }
+    //     else{
+    //        i = 0
+    //     }
+    //     i++
+
+
+    // }
+
+    // function rev(){
+    //     if(i<arr.length && i!=0){
+    //         i = i-2
+    //         console.log('rev',i)
+    //         // console.log(arr[i])
+
+    //     }
+    //     else{
+    //         i = (arr.length-1)
+    //         console.log('else',i)
+    //     }
+    // }
+
+
+
+
+
+
+</script>
+
+</html>
