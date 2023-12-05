@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div{
+    text-align: center;
+    border-radius: 23px;
+    box-shadow: 0px 0px 20px ;
+    box-shadow: rgba(61, 183, 17, 0.35) 0px 5px 15px;
+}
+</style>
+<body>
+    <div></div>
+    <!-- <div>
+        <img src="media/img/pexels-photo-8241135.webp" alt="">
+    </div> -->
+    <script>
+        let arr = ['free-photo-of-man-in-hat-and-with-backpack-standing-with-hills-behind.jpeg','pexels-photo-12205909.jpeg','pexels-photo-16777741.webp','pexels-photo-3935702.jpeg','pexels-photo-8241135.webp']
+
+        let ch1 = document.createElement('h1')
+        ch1.setAttribute('id','myh')
+        document.body.appendChild(ch1)
+        document.getElementById('myh').innerText = 'Change Image'
+        document.getElementById('myh').style = 'text-align: center;'
+
+
+        let cdiv = document.createElement('div')
+        cdiv.setAttribute('id','mydiv')
+        document.body.appendChild(cdiv)
+        cdiv.style = "width:300px;height:300px;border:1px solid red;margin:auto;border-radius: 23px;box-shadow: rgba(61, 183, 17, 0.35) 0px 5px 15px 8px;"
+
+
+        let cimg = document.createElement('img')
+        let gimg = document.getElementById('mydiv').appendChild(cimg)
+        gimg.setAttribute('id','imgid')
+        document.getElementById('imgid').style = 'width:300px;height:300px;border-radius: 23px;'
+        document.getElementById('imgid').src = `media/img/${arr[0]}`
+        console.log(cdiv)
+
+        let i = 0
+        setInterval(() => {
+            if(i<arr.length){
+                document.getElementById('imgid').src = `media/img/${arr[i]}`
+                i++
+            }else{
+                i = 0
+                document.getElementById('imgid').src = `media/img/${arr[i]}`
+
+
+
+            }
+            console.log(i)
+            
+        }, 2000);
+    </script>
+</body>
+</html>
