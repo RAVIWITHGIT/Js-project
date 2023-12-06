@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+    }
+    #main{
+        margin: auto;
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: bisque;
+    }
+    #main p{
+        font-size: 100px;
+    }
+</style>
+<body>
+    <h1>Counter</h1>
+    <div id="main">
+        <p id="mypara"></p>
+
+    </div>
+    
+    <script>
+        let getid = document.getElementById('main')
+        let getpara = document.getElementById('mypara')
+        let arr = ['red','yellow','blue','red','green','white','pink']
+        let i = 0
+        let j = 0
+        let c = 0
+        let int = setInterval(() => {
+            if(j>59 || c>arr.length){
+                getpara.innerText = `${i}:${j}`
+                i++
+                j = 0
+            }
+            getpara.innerText = `${i}:${j}`
+            j++
+            
+            
+        }, 100);
+
+        setInterval(() => {
+            if(c>arr.length){
+                getpara.style = `color:${arr[c]}`
+                c = 0
+            }
+            getpara.style = `color:${arr[c]}`
+            c++
+            
+        }, 100);
+
+
+    </script>
+</body>
+</html>
