@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    body{
+        background-color: rgb(144, 121, 105);
+    }
+    h3{
+        text-align: center;
+        font-size: 28px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .main{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .item{
+        width: 300px;
+        height: 370px;
+        border-radius: 15px;
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        align-items: center;
+
+    }
+    .myimg1{
+        width: 300px;
+    }
+    .myimg2{
+        width: 230px;
+    }
+    .myimg3{
+        width: 300px;
+        margin-bottom: 45px;
+    }
+    .myimg4{
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    button{
+        color: white;
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 8px;
+        border: 1px solid white;
+        background-color: blueviolet
+        
+    }
+
+</style>
+<body>
+    <h3>instrument sound</h3>
+    <div class="main">
+        <div class="item item1">
+            <h3>Harmonium</h3>
+            <img class="myimg1" src="image/Harmonium.jpg" alt="">
+            <audio id="Harmonium"  src="audio/43529_hopeful-harmonium_by_markoni_preview.mp3"></audio>
+            <button>press h</button>
+        </div>
+        <div class="item item2">
+            <h3>Breton</h3>
+            <img class="myimg2"  src="image/Breton musical wind instrument.jpg" alt="">
+            <audio id="Breton"  src="audio/Breton Bombard - Andrew Glover-Whitley [TubeRipper.com].m4a"></audio>
+            <button>press b</button>
+        </div>
+        <div class="item item3">
+            <h3>Sitar</h3>
+            <img class="myimg3"   src="image/Sitar musical instrument vector.jpg" alt="">
+            <audio id="Sitar"  src="audio/Saraswatis Sitar Symphony Relaxing Music for Concentration and Focus [TubeRipper.com].m4a"></audio>
+            <button>press s</button>
+        </div>
+        <div class="item item4">
+            <h3>Wooden flute</h3>
+            <img class="myimg4" src="image/Wooden flute..jpg" alt="">
+            <audio id="Flute"  src="audio/Morning Flute Music Himalayan Flute Music Mountain Flute Meditation Music [TubeRipper.com].m4a"></audio>
+            <button>press f</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
