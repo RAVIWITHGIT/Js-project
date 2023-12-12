@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="img/pngegg (1).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <style>
+    body{
+      background-color: gray;
+    }
+    .card{
+      background-color: blueviolet;
+      box-shadow: 5px 5px  red , -5px -5px red;
+    }
+  </style>
+  <body>
+    <h1 class="text-center text-white mb-3">Music Player</h1>
+    <div class="card m-auto " style="width: 20rem;">
+        <img  class="rounded-circle p-3 img-fluid"  src="" id="imgid" class="card-img-top" style="width: 300px; height: 300px;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center fs-4 text-white" id="mtitle"></h5>
+          <audio src="" id="musicid"></audio>
+          <div class="card-body d-flex justify-content-around">
+            <i class="fa-solid fa-backward" onclick="bakwrd()"></i>
+            <i class="fa-solid fa-play" onclick="play()" id="playbtn"></i>
+            <i class="fa-solid fa-forward" onclick="forwrd()"></i>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      let musicid = document.getElementById('musicid')
+      let imgid = document.getElementById('imgid')
+      let playbtn = document.getElementById('playbtn')
+      let mtitle = document.getElementById('mtitle')
+      let i = 0
+      console.log(playbtn)
+      let arrsong = [
+        {
+          id:"song1",
+          name:"kahani suno",
+          audio_src:"music/Kahani Suno(PagalWorld.com.pe).mp3",
+          img_src:"img/pexels-photo-2479312.jpeg"
+        },
+        {
+          id:"song2",
+          name:"kya loge tum",
+          audio_src:"music/Kya Loge Tum(PagalWorld.com.pe).mp3",
+          img_src:"img/pexels-photo-2701570.jpeg"
+        },
+        {
+          id:"song3",
+          name:"Pyaar Hota Kayi Baar Hai",
+          audio_src:"music/Pyaar Hota Kayi Baar Hai(PagalWorld.com.pe).mp3",
+          img_src:"img/pexels-photo-3693108.webp"
+        },
+        {
+          id:"song4",
+          name:"Raatan Lambiyan",
+          audio_src:"music/Raatan Lambiyan(PagalWorld.com.pe).mp3",
+          img_src:"img/pexels-photo-3971985.webp"
+        },
+        {
+          id:"song5",
+          name:"Tere Hawaale",
+          audio_src:"music/Tere Hawaale(PagalWorld.com.pe).mp3",
+          img_src:"img/pexels-photo-4315839.webp"
+        }
+      ]
+      
+      musicid.src = arrsong[i].audio_src
+      imgid.src = arrsong[i].img_src
+      mtitle.innerText = arrsong[i].name
+
+      audio_condition = false
+      function play(){
+        if(audio_condition){
+          musicid.pause()
+          audio_condition =false
+          playbtn.setAttribute("class", "fa-solid fa-play")
+          console.log('yes')
+         
+        }
+        else{
+          musicid.play()
+          audio_condition =true
+          playbtn.setAttribute("class", "fa-solid fa-pause")
+          console.log('no')
+
+         
+        }
+
+      }
+
+      function forwrd(){
+        i++
+        if(arrsong.length>i){
+          imgid.src = arrsong[i].img_src
+          musicid.src = arrsong[i].audio_src
+          mtitle.innerText = arrsong[i].name
+          console.log(i)
+          if(audio_condition){
+            musicid.play()
+
+            audio_condition =true
+            playbtn.setAttribute("class", "fa-solid fa-pause")
+            console.log('nest yest')
+          }
+          else{
+            audio_condition =false
+            playbtn.setAttribute("class", "fa-solid fa-play")
+            console.log('nest no')
+          }
+
+
+        }
+        else{
+          i = 0
+          imgid.src = arrsong[i].img_src
+          musicid.src = arrsong[i].audio_src
+          mtitle.innerText = arrsong[i].name
+          console.log(i)
+          if(audio_condition){
+            musicid.play()
+
+            audio_condition =true
+            playbtn.setAttribute("class", "fa-solid fa-pause")
+            console.log('nest yest')
+          }
+          else{
+            audio_condition =false
+            playbtn.setAttribute("class", "fa-solid fa-play")
+            console.log('nest no')
+          }
+        }
+       
+
+
+      }
+
+
+      function bakwrd() {
+        if(i==0){
+          i = 4
+          console.log(i)
+          imgid.src = arrsong[i].img_src
+          musicid.src = arrsong[i].audio_src
+          mtitle.innerText = arrsong[i].name
+          console.log(i)
+          if(audio_condition){
+            musicid.play()
+
+            audio_condition =true
+            playbtn.setAttribute("class", "fa-solid fa-pause")
+            console.log('nest yest')
+          }
+          else{
+            audio_condition =false
+            playbtn.setAttribute("class", "fa-solid fa-play")
+            console.log('nest no')
+          }
+        }
+        else{
+          i--
+          console.log(i)
+          imgid.src = arrsong[i].img_src
+          musicid.src = arrsong[i].audio_src
+          mtitle.innerText = arrsong[i].name
+          console.log(i)
+          if(audio_condition){
+            musicid.play()
+
+            audio_condition =true
+            playbtn.setAttribute("class", "fa-solid fa-pause")
+            console.log('nest yest')
+          }
+          else{
+            audio_condition =false
+            playbtn.setAttribute("class", "fa-solid fa-play")
+            console.log('nest no')
+          }
+        }
+        
+      }
+
+
+    
+    </script>
+  </body>
+</html>
