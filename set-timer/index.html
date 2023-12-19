@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <style>
+        body{
+            background-color: darkcyan;
+        }
+        h1{
+            text-align: center;
+        }
+  #res{
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    background-color: burlywood;
+    box-shadow: 0px 0px 12px 10px yellow;
+    color: cadetblue;
+  }
+    </style>
+</head>
+
+<body>
+    <h1>Set Timer</h1>
+    <center>
+        <div id="main">
+            <input type="number" placeholder="Time" id="timeinput" required>
+            <button onclick="showtime()">start </button>
+        </div>
+    </center>
+    <center>
+        <div id="res"></div>
+    </center>
+</body>
+<script>
+    let arr = ['red','green','blue','white','yellow','pink','burlywood','bisque','brown','cadetblue','white']
+    let main = document.getElementById("main")
+    let inputtime = document.getElementById("timeinput");
+    let showresult = document.getElementById("res");
+    let i = 59
+    let c = 0
+    function showtime() {
+        // let col = setInterval(() => {
+        //     if(c<arr.length){
+        //         document.body.style.backgroundColor = `${arr[c]}`
+        //         c++
+
+        //     }else{
+        //         document.body.style.backgroundColor = `${arr[c]}`
+        //         c = 0
+
+
+        //     }
+            
+        // }, 100);
+
+        let a = setInterval(() => {
+            showresult.innerHTML = `${inputtime.value} : ${i}`
+            i--;
+            if (i < 0) {
+                i = 59
+                inputtime.value--
+
+            }
+            if (inputtime.value == -1) {
+                clearInterval(a)
+                clearInterval(col)
+            }
+        }, 100);
+
+    }
+</script>
+
+</html>
