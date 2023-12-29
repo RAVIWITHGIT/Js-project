@@ -1,0 +1,110 @@
+body{
+    background-color: rgb(241, 241, 230) !important;
+}
+#myh3{
+    width: 200px;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+th ,td{
+    background-color: rgb(241, 241, 230) !important;
+    height: 60px;
+}
+
+
+.input_div{
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.input_box_class{
+    border: none ;
+    height: 30px;
+    width: 380px;
+    background-color: rgb(241, 241, 230) !important;
+    font-size: 20px;
+    padding: 15px 5px;
+    border-bottom: 2px solid red;
+}
+
+
+.input_box_class:focus{
+    border: 2px solid rgb(241, 241, 230) ;
+    border-bottom: 2px solid red;
+    outline: none;
+}
+
+
+#add_todo_box{
+    margin-top: 20px;
+
+}
+
+
+#edit_div{
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.edit_box_class{
+    border: none ;
+    height: 30px;
+    width: 380px;
+    background-color: rgb(241, 241, 230) !important;
+    font-size: 18px;
+    padding: 15px 5px;
+    border-bottom: 2px solid gray;
+}
+
+
+.edit_box_class:focus{
+    border: 2px solid rgb(241, 241, 230) ;
+    border-bottom: 2px solid gray;
+    outline: none;
+}
+
+.check_box{
+    border: 1px solid rgb(97, 73, 73);
+    width: 25px;
+    height: 25px;
+    color: blueviolet;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+#index_box{
+    display: none;
+}
+#check_marks_thead{
+    width: 300px;
+
+}
+.check_th{
+    padding-left: 60px !important;
+    padding-right: 40px !important;
+    float: right;
+}
+
+.edit_td{
+    float: left;
+    padding-left: 50px !important;
+
+}
+
+.delete_td{
+    padding-left: 50px !important;
+    float: left;
+}
+
+.todo_text{
+    word-break: break-all;
+    width: 350px;
+    font-size: 20px;
+}
+
+.line_throw{
+    color: #808080;
+}

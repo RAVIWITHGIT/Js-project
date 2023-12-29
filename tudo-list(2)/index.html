@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">ToDo-List</h1>
+    <div class="mb-3 d-flex">
+      <input type="text" class="form-control" id="myinput" placeholder="Enter your Name">
+      <input type="text" class="form-control" id="ageinput" placeholder="Enter your Age">
+      <input type="text" class="form-control" id="frominput" placeholder="where are you from">
+      <button type="button" onclick="add()" class="btn btn-secondary">add</button>
+    </div>
+    <div class="mb-3 d-flex">
+      <input type="text" class="form-control" id="myedit" placeholder="Edit Name">
+      <input type="text" class="form-control" id="editage" placeholder="Edit Age">
+      <input type="text" class="form-control" id="editfrom" placeholder="Edit From">
+      <input type="number" class="form-control" id="edit_index" placeholder="Edit S.NO">
+      <button type="button" onclick="editbox()" class="btn btn-secondary">edit</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr >
+          <th scope="col">S.No</th>
+          <th  scope="col">Name</th>
+          <th  scope="col">Age</th>
+          <th  scope="col">From</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="mytbody">
+      </tbody>
+    </table>
+  </div>
+
+
+  <script type="text/javascript">
+    let myarr = []
+    let myinput = document.getElementById('myinput')
+    let ageinput = document.getElementById('ageinput')
+    let frominput = document.getElementById('frominput')
+    let mytbody = document.getElementById('mytbody')
+    let myedit = document.getElementById('myedit')
+    let editage = document.getElementById('editage')
+    let editfrom = document.getElementById('editfrom')
+    let edit_index = document.getElementById('edit_index')
+    function add() {
+      myarr.push([myinput.value,ageinput.value,frominput.value])
+      console.log(myarr)
+      myinput.value=''
+      ageinput.value = ''
+      frominput.value = ''
+      mytbody.innerHTML = ''
+      myarr.sort()
+      myarr.forEach(function (element,index) {
+        mytbody.innerHTML += `
+        <tr >
+          <th scope="row">${index+1}</th>
+          <td id="todo_value" >${element[0]}</td>
+          <td id="todo_value" >${element[1]}</td>
+          <td id="todo_value" >${element[2]}</td>
+          <td><button type="button" onclick="edit(${index})" id="edit" class="btn btn-success">Edit</button></td>
+          <td><button type="button" onclick="del(${index})" id="del" class="btn btn-danger">Delete</button></td>
+        </tr>
+
+        `
+    })
+
+    
+  }
+
+  
+  
+  function edit(i) {
+    // console.log(myarr[i])
+    new_array = myarr[i]
+    myedit.value = new_array[0]
+    editage.value = new_array[1]
+    editfrom.value = new_array[2]
+    edit_index.value = i+1
+    console.log(typeof(i+1))
+      
+    }
+
+    function editbox() {
+      myarr[Number.parseInt(edit_index.value)-1] =   [myedit.value,editage.value,editfrom.value]
+      mytbody.innerHTML = ''
+      myedit.value = ''
+      editage.value = ''
+      editfrom.value = ''
+      edit_index.value = ''
+      myarr.sort()
+      myarr.forEach(function (element,index) {
+        mytbody.innerHTML += `
+        <tr>
+          <th scope="row">${index+1}</th>
+          <td id="todo_value" >${element[0]}</td>
+          <td id="todo_value" >${element[1]}</td>
+          <td id="todo_value" >${element[2]}</td>
+          <td><button type="button" onclick="edit(${index})" id="edit" class="btn btn-success">Edit</button></td>
+          <td><button type="button" onclick="del(${index})" id="del" class="btn btn-danger">Delete</button></td>
+        </tr>
+
+        `
+    })
+
+
+
+
+    }
+
+
+
+    function del(i) {
+      myarr.splice(i,1)
+      console.log(myarr)
+      mytbody.innerHTML = ''
+      myarr.forEach(function (element,index) {
+        mytbody.innerHTML += `
+        <tr>
+          <th scope="row">${index+1}</th>
+          <td>${element[0]}</td>
+          <td>${element[1]}</td>
+          <td>${element[2]}</td>
+          <td><button type="button" onclick="edit()" id="edit" class="btn btn-success">Edit</button></td>
+          <td><button type="button" onclick="del(${index})" id="del" class="btn btn-danger">Delete</button></td>
+        </tr>
+
+        `
+    })
+      
+    }
+   
+
+
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

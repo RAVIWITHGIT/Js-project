@@ -1,0 +1,120 @@
+body{
+    background-color: rgb(66, 66, 66);
+}
+
+#calculator_main_div{
+    width: 300px;
+    height: 420px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgb(211, 211, 211);
+    border: 1px solid rgba(0,0,0,0.11);
+    border-radius: 15px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 8px 8px 0px rgba(0,0,0,0.11),
+0px 16px 16px 0px rgba(0,0,0,0.11),
+0px 32px 32px 0px rgba(0,0,0,0.11);
+
+}
+
+
+.inner-shadow{
+  width: 150px;
+  height: 150px;
+  box-shadow: rgb(114, 114, 114) 0px 0px 10px 5px inset;
+
+
+}
+
+#calculator_head{
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(232, 232, 232)100%);
+
+}
+
+#calculator_body{
+    width: 100%;
+    height: 78%;
+    display: flex;
+
+}
+
+#number{
+    width: 75%;
+    height: 100%;
+}
+#sign{
+    width: 25%;
+    height: 100%;
+}
+
+
+.cl{
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.num{
+    background-color:rgb(235, 235, 235) ;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 8px 8px 0px rgba(0,0,0,0.11),
+0px 16px 16px 0px rgba(0,0,0,0.11),
+0px 32px 32px 0px rgba(0,0,0,0.11);
+cursor: pointer;
+
+}
+.num:hover{
+    translate: 0px -2px;
+
+
+}
+
+.sign_num{
+    background: linear-gradient(to bottom, rgb(67, 67, 67) 0%, rgb(46, 46, 46) 100%);
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 8px 8px 0px rgba(0,0,0,0.11),
+0px 16px 16px 0px rgba(0,0,0,0.11),
+0px 32px 32px 0px rgba(0,0,0,0.11);
+cursor: pointer;
+
+}
+
+.sign_num:hover{
+    translate: 0px -2px;
+}
+.acc{
+    background: linear-gradient(to bottom, rgb(210, 0, 0) 0%, rgb(176, 0, 0) 100%);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 8px 8px 0px rgba(0,0,0,0.11),
+0px 16px 16px 0px rgba(0,0,0,0.11),
+0px 32px 32px 0px rgba(0,0,0,0.11);
+cursor: pointer;
+
+
+}
+
+.acc:hover{
+    translate: 0px -2px;
+
+}
