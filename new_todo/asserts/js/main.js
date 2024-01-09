@@ -91,7 +91,7 @@ function del(geti) {
     if (arr[geti][1]) {
         arr.splice(geti, 1)
         mytbody.innerHTML = ''
-
+        
         for (let i = 0; i < arr.length; i++) {
             mytbody.innerHTML += `
         <tr>
@@ -112,10 +112,14 @@ function del(geti) {
             }
 
         }
+    input_box.focus();
+
 
     }
     else {
-        alert('sorry')
+        alert('Plese Check The Box')
+    input_box.focus();
+
     }
 
 }
